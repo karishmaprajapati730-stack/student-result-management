@@ -28,7 +28,8 @@ def add_student():
     
     conn.execute('''
     INSERT INTO student(st_name,st_class,maths,science,english)
-    VALUES(('Aarav Sharma', 'BTech-CSE', 85, 78, 92),
+    VALUES
+    ('Aarav Sharma', 'BTech-CSE', 85, 78, 92),
 
     ('Priya Singh', 'BTech-CSE', 91, 88, 84),
 
@@ -40,7 +41,8 @@ def add_student():
 
     ('Ananya Mishra', 'BTech-CSE', 89, 90, 86),
 
-    ('Rohan Kumar', 'BTech-CSE', 81, 77, 83))
+    ('Rohan Kumar', 'BTech-CSE', 81, 77, 83);
+    
 
     ''')
 
@@ -49,3 +51,32 @@ def add_student():
 
     print("Student data added successfully")
 
+def view_student():
+    conn = sqlite3.connect(path)
+    
+    data = conn.execute("SELECT * FROM student").fetchall()
+    
+    conn.close()
+
+    return data
+    
+
+def update_student(student_id, maths, science, english):
+    
+    conn = sqlite3.connect(path)
+    
+    conn.execute('''
+    UPDATE student
+    SET maths=?,
+    science=?
+    english=?
+    WHERE st_id=?
+    ''',(maths,science,english,student_id))
+
+    conn.commit()
+    conn.close()
+
+    print("Student Updated succesfully")
+
+
+def delete_student(student_id)
