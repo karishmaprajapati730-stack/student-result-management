@@ -5,12 +5,15 @@ import sqlite3
 conn=sqlite3.connect("student.db")
 
 try:
-    conn.execute('''create table student(st_id INT AUTO_INCREMENT,
-                 st_name VARCHAR(50),
-                 st_class VARCHAR(10),
-                 st_email VARCHAR(30))
+    conn.execute('''create table student(st_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 st_name TEXT,
+                 st_class TEXT,
+                 maths INTEGER,
+                 science INTEGER,
+                 english INTEGER)
                  ''')
     
 except:
     print("Error...")
 
+    
