@@ -2,4 +2,7 @@ from database.db_operations import *
 
 # create_table()
 
-add_student()
+# add_student()
+
+view_student()
+

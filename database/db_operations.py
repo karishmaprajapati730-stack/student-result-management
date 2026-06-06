@@ -79,4 +79,28 @@ def update_student(student_id, maths, science, english):
     print("Student Updated succesfully")
 
 
-def delete_student(student_id)
+def delete_student(student_id):
+    conn = sqlite3.connect(path)
+    
+    conn.execute("DELETE FROM student WHERE st_id=?",
+    (student_id,)
+    )
+
+    conn.commit()
+    conn.close()
+
+    print("Student deleted successfully")
+
+def search_student(student_id):
+    conn = sqlite3.connect(path)
+
+    data = conn.execute("SELECT * FROM student WHERE st_id=?",
+    (student_id)
+    ).fetchall()
+
+    conn.close()
+
+    return data
+
+
+
