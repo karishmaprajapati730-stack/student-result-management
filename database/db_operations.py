@@ -23,4 +23,29 @@ def create_table():
 
     print("Table is created successfully")
 
+def add_student(name, student_class, maths, science, english):
+    conn = sqlite3.connect(path)
+    
+    conn.execute('''
+    INSERT INTO student(st_name,st_class,maths,science,english)
+    VALUES(('Aarav Sharma', 'BTech-CSE', 85, 78, 92),
+
+    ('Priya Singh', 'BTech-CSE', 91, 88, 84),
+
+    ('Rahul Verma', 'BTech-CSE', 76, 82, 79),
+
+    ('Sneha Gupta', 'BTech-CSE', 95, 93, 97),
+
+    ('Vikram Patel', 'BTech-CSE', 68, 74, 70),
+
+    ('Ananya Mishra', 'BTech-CSE', 89, 90, 86),
+
+    ('Rohan Kumar', 'BTech-CSE', 81, 77, 83))
+
+    ''')
+
+    conn.commit()
+    conn.close()
+
+    print("Student data added successfully")
 
