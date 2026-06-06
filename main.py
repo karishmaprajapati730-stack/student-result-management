@@ -1,5 +1,5 @@
 from database.db_operations import *
 
-create_table()
+# create_table()
 
 add_student()

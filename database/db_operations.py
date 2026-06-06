@@ -23,7 +23,7 @@ def create_table():
 
     print("Table is created successfully")
 
-def add_student(name, student_class, maths, science, english):
+def add_student():
     conn = sqlite3.connect(path)
     
     conn.execute('''
