@@ -1,9 +1,9 @@
 from database.db_operations import *
 from analytics.analytics import *
 
-# create_table()
+create_table()
 
-# add_student()
+add_student()
 
 data = view_student()
 
