@@ -4,5 +4,9 @@ from database.db_operations import *
 
 # add_student()
 
-view_student()
+data = view_student()
 
+print(data)
+
+info = search_student(4)
+print(info)

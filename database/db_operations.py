@@ -95,7 +95,7 @@ def search_student(student_id):
     conn = sqlite3.connect(path)
 
     data = conn.execute("SELECT * FROM student WHERE st_id=?",
-    (student_id)
+    (student_id,)
     ).fetchall()
 
     conn.close()
