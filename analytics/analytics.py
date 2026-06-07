@@ -1,3 +1,4 @@
+import pandas as pd
 import sqlite3 
 
 # data = sqlite3.connect("student.db")
@@ -39,4 +40,16 @@ def lowest_marks():
     conn.close()
 
     return lowest_marks
+
+def generate_csv_report():
+
+    conn = sqlite3.connect("database/student.db")
+    
+    df = pd.read_sql_query("SELECT * FROM student", conn)
+    
+    df.to_csv("reports/result_report.csv")
+
+    conn.close()
+
+    print("CSV report generated successfully")
 

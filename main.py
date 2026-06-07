@@ -23,3 +23,5 @@ print(highest)
 
 lowest = lowest_marks()
 print(lowest)
+
+generate_csv_report()
